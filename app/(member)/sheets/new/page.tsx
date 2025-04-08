@@ -4,14 +4,14 @@ import Navbar from "@/app/(member)/sheets/new/navbar";
 import PageContainer from "@/components/page-container";
 import { TypographyH1 } from "@/components/typography";
 import { api } from "@/convex/_generated/api";
-import { Button, Input, Textarea } from "@heroui/react";
+import { Button, Input } from "@heroui/react";
 import { useMutation } from "convex/react";
 import { useTransitionRouter } from "next-view-transitions";
 import { useCallback, useState } from "react";
 
 export default function Page() {
   const { push } = useTransitionRouter();
-  const createSheet = useMutation(api.sheet.createSheet);
+  const createSheet = useMutation(api.sheets.createSheet);
 
   const [title, setTitle] = useState("");
 

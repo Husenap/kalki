@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@heroui/react";
-import { FileSpreadsheet, Hexagon, User } from "lucide-react";
+import { FileSpreadsheet, User } from "lucide-react";
 import { Link } from "next-view-transitions";
 import { usePathname } from "next/navigation";
 
