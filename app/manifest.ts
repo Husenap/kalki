@@ -8,7 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
       "Discover Kalki, a powerful and intuitive spreadsheet app designed to simplify data management. With sleek features, collaborative tools, and seamless integration, Kalki empowers you to organize, analyze, and visualize data like never before. Perfect for professionals, students, and anyone who values productivity.",
     start_url: "/",
     display: "standalone",
-    background_color: "#d7bf9e",
+    background_color: "#ffffff",
     icons: [
       {
         src: "/icon-192x192.png",
