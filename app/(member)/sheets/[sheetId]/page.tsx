@@ -3,7 +3,6 @@
 import Navbar from "@/app/(member)/sheets/[sheetId]/navbar";
 import FullscreenSpinner from "@/components/fullscreen-spinner";
 import PageContainer from "@/components/page-container";
-import { TypographyH1 } from "@/components/typography";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 import { useQuery } from "convex/react";
@@ -32,7 +31,6 @@ function Content({ sheetId }: { sheetId: Id<"sheets"> }) {
 
   const [data, setData] = useState(createEmptyMatrix<CellBase<any>>(30, 15));
 
-
   if (!sheet) return <FullscreenSpinner />;
 
   return (
@@ -43,5 +41,4 @@ function Content({ sheetId }: { sheetId: Id<"sheets"> }) {
       onChange={setData}
     />
   );
-
 }

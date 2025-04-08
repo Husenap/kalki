@@ -6,7 +6,7 @@ export default function PageContainer({
   topNavbar,
   bottomNavbar,
   disableViewTransitions,
-  fullscreen
+  fullscreen,
 }: {
   children?: React.ReactNode;
   topNavbar?: React.ReactNode;
@@ -30,8 +30,8 @@ export default function PageContainer({
             disableViewTransitions
               ? undefined
               : {
-                viewTransitionName: "jim-top-navbar",
-              }
+                  viewTransitionName: "jim-top-navbar",
+                }
           }
         >
           <div
@@ -40,8 +40,8 @@ export default function PageContainer({
               disableViewTransitions
                 ? undefined
                 : {
-                  viewTransitionName: "jim-top-navbar-gradient",
-                }
+                    viewTransitionName: "jim-top-navbar-gradient",
+                  }
             }
           >
             <div
@@ -50,8 +50,8 @@ export default function PageContainer({
                 disableViewTransitions
                   ? undefined
                   : {
-                    viewTransitionName: "jim-top-navbar-wrapper",
-                  }
+                      viewTransitionName: "jim-top-navbar-wrapper",
+                    }
               }
             >
               {topNavbar}
@@ -66,26 +66,23 @@ export default function PageContainer({
           {
             "px-2": !fullscreen,
             "py-4": !fullscreen,
-          }
+          },
         )}
         style={
           disableViewTransitions
             ? undefined
             : {
-              viewTransitionName: "jim-main-content",
-            }
+                viewTransitionName: "jim-main-content",
+              }
         }
       >
         <div
-          className={
-            cn(
-              "flex w-full flex-col gap-2",
-              {
-                "max-w-5xl": !fullscreen,
-              }
-            )
-          }
-        >{children}</div>
+          className={cn("flex w-full flex-col gap-2", {
+            "max-w-5xl": !fullscreen,
+          })}
+        >
+          {children}
+        </div>
       </main>
 
       <div className="iphone-safe-inset w-full">
@@ -104,8 +101,8 @@ export default function PageContainer({
             disableViewTransitions
               ? undefined
               : {
-                viewTransitionName: "jim-bottom-navbar",
-              }
+                  viewTransitionName: "jim-bottom-navbar",
+                }
           }
         >
           <div className="iphone-safe-inset flex w-full justify-center bg-gradient-to-t from-content2 to-transparent">
