@@ -25,6 +25,7 @@ export default function Home() {
       <main className="p-8 flex flex-col gap-8">
         <h1 className="text-4xl font-bold text-center">
           Welcome to Kalki!
+
         </h1>
         <Content />
       </main>

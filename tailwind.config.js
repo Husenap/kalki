@@ -15,29 +15,29 @@ module.exports = {
       themes: {
         light: {
           colors: {
-            background: "#FDF6EC", // Warm off-white
-            foreground: "#11181C", // Dark contrast for readability
+            background: "#F5F5F7", // Warm off-white
+            foreground: "#1F1F1F", // Dark contrast for readability
             primary: {
               foreground: "#000000",
-              DEFAULT: "#F4A623", // Golden honey
+              DEFAULT: "#2DBA4E", 
             },
             secondary: {
               foreground: "#000000",
-              DEFAULT: "#A7E6A2", // Mint green 
+              DEFAULT: "#3B82F6", 
             },
           },
         },
         dark: {
           colors: {
-            background: "#11181C", // Deep charcoal
-            foreground: "#FDF6EC", // Light warm text
+            background: "#1F1F1F", // Deep charcoal
+            foreground: "#F5F5F7", // Light warm text
             primary: {
               foreground: "#000000",
-              DEFAULT: "#F4A623", // Golden honey
+              DEFAULT: "#2DBA4E", 
             },
             secondary: {
               foreground: "#000000",
-              DEFAULT: "#A7E6A2", // Mint green
+              DEFAULT: "#3B82F6", 
             },
           },
         },
