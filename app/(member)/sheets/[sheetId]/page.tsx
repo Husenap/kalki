@@ -7,7 +7,9 @@ import { TypographyH1 } from "@/components/typography";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 import { useQuery } from "convex/react";
-import { use } from "react";
+import { useTheme } from "next-themes";
+import { use, useState } from "react";
+import Spreadsheet, { CellBase, createEmptyMatrix } from "react-spreadsheet";
 
 export default function Page({
   params,
@@ -17,7 +19,7 @@ export default function Page({
   const { sheetId } = use(params);
 
   return (
-    <PageContainer topNavbar={<Navbar />}>
+    <PageContainer topNavbar={<Navbar />} fullscreen>
       <Content sheetId={sheetId} />
     </PageContainer>
   );
@@ -26,11 +28,20 @@ export default function Page({
 function Content({ sheetId }: { sheetId: Id<"sheets"> }) {
   const sheet = useQuery(api.sheets.byId, { sheetId });
 
+  const { resolvedTheme } = useTheme();
+
+  const [data, setData] = useState(createEmptyMatrix<CellBase<any>>(30, 15));
+
+
   if (!sheet) return <FullscreenSpinner />;
 
   return (
-    <>
-      <TypographyH1>{sheet.name}</TypographyH1>
-    </>
+    <Spreadsheet
+      className="!overflow-scroll w-full h-full"
+      darkMode={resolvedTheme === "dark"}
+      data={data}
+      onChange={setData}
+    />
   );
+
 }

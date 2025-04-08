@@ -1,3 +1,4 @@
+import { cn } from "@heroui/react";
 import React from "react";
 
 export default function PageContainer({
@@ -5,11 +6,13 @@ export default function PageContainer({
   topNavbar,
   bottomNavbar,
   disableViewTransitions,
+  fullscreen
 }: {
   children?: React.ReactNode;
   topNavbar?: React.ReactNode;
   bottomNavbar?: React.ReactNode;
   disableViewTransitions?: boolean;
+  fullscreen?: boolean;
 }) {
   return (
     <div className="flex min-h-full flex-1 flex-col items-center">
@@ -58,7 +61,13 @@ export default function PageContainer({
       )}
 
       <main
-        className="flex w-full flex-1 justify-center overflow-x-hidden overscroll-x-none px-2 py-4"
+        className={cn(
+          "flex w-full flex-1 justify-center overflow-x-hidden overscroll-x-none",
+          {
+            "px-2": !fullscreen,
+            "py-4": !fullscreen,
+          }
+        )}
         style={
           disableViewTransitions
             ? undefined
@@ -67,7 +76,16 @@ export default function PageContainer({
             }
         }
       >
-        <div className="flex w-full max-w-5xl flex-col gap-2">{children}</div>
+        <div
+          className={
+            cn(
+              "flex w-full flex-col gap-2",
+              {
+                "max-w-5xl": !fullscreen,
+              }
+            )
+          }
+        >{children}</div>
       </main>
 
       <div className="iphone-safe-inset w-full">
