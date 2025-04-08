@@ -21,6 +21,7 @@ export const { auth, signIn, signOut, store, isAuthenticated } = convexAuth({
             username,
             firstname: (credentials.firstname as string).trim(),
             lastname: (credentials.lastname as string).trim(),
+            birthdate: new Date(credentials.birthdate as string).getTime(),
           };
           const created = await createAccount(ctx, {
             provider,
